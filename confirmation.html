@@ -1,5 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+    //this function was taken from the stacked overflow page from my readme https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript 
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    // this code is used to grab the parameters as variables
+    var companyName = getParameterByName("companyName");
+    var taxId = getParameterByName("taxId")
+    var businessPhone = getParameterByName("businessPhone");
+    var businessType = getParameterByName("businessType");
+    var ownerName = getParameterByName("ownerName");
+    var email = getParameterByName("email");
+    var phone = getParameterByName("phone");
+    var ssn = getParameterByName("ssn");
+    var dob = getParameterByName("dob");
+    var percentOwn = getParameterByName("percentOwn");
+    var loanType = getParameterByName("loanType");
+    var amount = getParameterByName("amount");
+    var gross = getParameterByName("gross");
+    var term = getParameterByName("term");
+</script>
 
 <head>
     <meta charset="utf-8">
@@ -8,15 +34,15 @@
     <!-- STYLE SHEETS AND FONTS -->
     <link href="/css/stylesheet.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="js/script.js"></script>
     <!-- JQuery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Contact Us | Bank Website</title>
+    <title>Confirmation | Bank Website</title>
 </head>
 
-<body>
-    <!--PUT THE WEBPAGE STUFF HERE-->
+<body onload="confirm(companyName, taxId, businessPhone, email, businessType, ownerName, phone, dob, percentOwn, loanType, amount, gross, term)">
     <nav class="navbar navbar-fixed-top navbar-expand-lg">
         <a class="navbar-brand" href="index.html">Bank Co.</a>
         <!-- Navbar content -->
@@ -39,36 +65,17 @@
         </ul>
     </nav>
     <div class="container-fluid">
-        <h1 style="text-align: center;padding-bottom:3rem;">
-            Contact The Following People at The Bank Co.
-        </h1>
+        <h1 style="text-align: center;">Application Confirmation</h1>
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-4 d-flex justify-content-center">
-                <h2 style="margin-right:1rem;">Contact:<br>The Owner and CEO</h2>
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="imgs/business1.jpg" alt="John Doe" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">Johnathon Doe</h4>
-                        <p class="card-text">email: jnDoe@samplemail.com <br> phone: 999-999-9999</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 d-flex justify-content-center">
-                <h2 style="margin-right:1rem;">Contact:<br>The Assistant</h2>
-                <div class="card" style="width:400px">
-                    <img class="card-img-top" src="imgs/business2.jpg" alt="Assisstant man" style="width:100%">
-                    <div class="card-body">
-                        <h4 class="card-title">Samuel Smitherson</h4>
-                        <p class="card-text">email: ssmitherson@samplemail.com <br> phone: 999-888-8888</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-2"></div>
+            <h3 style="text-align: center;">Thank you for your application.</h3>
         </div>
-
+        <div class="row">
+            <!-- these regions are filled by the function in scrip.js -->
+            <p id="confirmation" style="text-align: center;">info</p>
+            <p><br></p>
+            <p id="info" style="text-align: center;">info</p>
+        </div>
     </div>
-    <!--MORE BOOTSTRAP -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

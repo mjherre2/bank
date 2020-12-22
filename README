@@ -1,0 +1,34 @@
+This project can be run as it is. It uses the files included in the zip file.
+
+Please ensure that your web browser accepts popups as the website will need to create a pop up for the email function used.
+
+I used these resources: 
+
+https://stackoverflow.com/questions/7381150/how-to-send-an-email-from-javascript
+https://stackoverflow.com/questions/10219781/javascript-adding-linebreak-in-mailto-body/10220953
+https://www.w3schools.com/howto/howto_js_redirect_webpage.asp   
+https://www.w3schools.com/html/html_form_input_types.asp
+https://getbootstrap.com/docs/4.0/components/card/
+https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+
+as well as a lot more of the bootstrap documentation for grids, themes, html_form_input_types
+
+In order to walk through this website and see all the requirements I had in my project requirements (Part 1) assignment,
+please start at index.html.
+Travel to the different pages in the navbar in order to see how they look.
+
+After looking at the home page and the pages in the navbar, you can begin the application from many places:
+index.html, workingCapital.html, equipmentFin.html 
+
+all have links or buttons to reach the application page.
+
+From the application page you will find a form. Please fill out the form as needed, just the required fields are necessary.
+
+Upon hitting submit, it should direct u to the confirmation page (if you filled the required forms)
+AND your browser may ask to open a pop up of some sort. Click yes or agree because my website will try to send an email using the default email application.
+The content of this email should be from the form.
+
+The confirmation page shall also display the contents of the form.
+
+That would be the end of the tour. Thank you for looking through it. 
+
